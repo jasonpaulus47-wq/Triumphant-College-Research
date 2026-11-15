@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Support & Academic Motivation Study | Triumphant College</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .step-content {
+            display: none;
+        }
+        .step-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 flex flex-col justify-between py-6 px-4 sm:px-6">
+
+    <!-- Main Card Container -->
+    <div class="max-w-xl mx-auto w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 my-auto">
+
+        <!-- Header -->
+        <div class="bg-indigo-600 p-6 sm:p-8 text-white">
+            <span class="inline-block px-3 py-1 bg-white/25 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide uppercase mb-2">
+                Triumphant College Research
+            </span>
+            <h1 class="text-xl sm:text-2xl font-bold tracking-tight">Peer Support & Academic Motivation</h1>
+            <p class="text-indigo-100 text-xs sm:text-sm mt-1">Town Campus, Windhoek • Final Year Study</p>
+            
+            <!-- Progress Bar -->
+            <div class="mt-6">
+                <div class="flex justify-between text-xs font-medium text-indigo-100 mb-1">
+                    <span id="stepIndicator">Step 1 of 5</span>
+                    <span id="progressPercent">20%</span>
+                </div>
+                <div class="w-full bg-indigo-900/40 h-2 rounded-full overflow-hidden">
+                    <div id="progressBar" class="bg-amber-400 h-full transition-all duration-300 w-1/5"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Connected to Formspree -->
+        <form id="researchForm" action="https://formspree.io/f/xqpqpplr" method="POST" class="p-6 sm:p-8 space-y-6">
+
+            <!-- STEP 1: CONSENT & DEMOGRAPHICS -->
+            <div class="step-content active" data-step="1">
+                <div class="mb-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 text-xs text-slate-600 leading-relaxed">
+                    <strong class="text-slate-800 block mb-1">Dear Participant,</strong>
+                    This study explores student experiences of peer support and academic motivation. Your participation is completely voluntary and confidential. Your name will not be included in the report.
+                </div>
+
+                <h3 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b">Section A: Demographics</h3>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">1. Gender</label>
+                        <select name="gender" required class="w-full p-3 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                            <option value="" disabled selected>Select gender...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">2. Age Group</label>
+                        <select name="age_group" required class="w-full p-3 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                            <option value="" disabled selected>Select age group...</option>
+                            <option value="18-20 years">18-20 years</option>
+                            <option value="21-25 years">21-25 years</option>
+                            <option value="26-30 years">26-30 years</option>
+                            <option value="31+ years">31 years and above</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">3. Year of Study</label>
+                        <select name="year_of_study" required class="w-full p-3 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                            <option value="" disabled selected>Select year of study...</option>
+                            <option value="First year">First year</option>
+                            <option value="Second year">Second year</option>
+                            <option value="Third year">Third year</option>
+                            <option value="Fourth year">Fourth year / Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: DEMOGRAPHICS CONTINUED -->
+            <div class="step-content" data-step="2">
+                <h3 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b">Section A (Cont.): Background</h3>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">4. Study Programme</label>
+                        <input type="text" name="study_programme" required placeholder="e.g. Electrical Engineering, IT..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">5. Mode of Study</label>
+                        <select name="mode_of_study" required class="w-full p-3 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                            <option value="" disabled selected>Select mode...</option>
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">6. Duration at Triumphant College</label>
+                        <select name="duration" required class="w-full p-3 rounded-xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                            <option value="" disabled selected>Select duration...</option>
+                            <option value="Less than 1 year">Less than 1 year</option>
+                            <option value="1-2 years">1-2 years</option>
+                            <option value="3 years or more">3 years or more</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: SECTION B (PEER SUPPORT) -->
+            <div class="step-content" data-step="3">
+                <h3 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b">Section B: Peer Support</h3>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">1. What does peer support mean to you?</label>
+                        <textarea name="peer_meaning" rows="3" required placeholder="Your thoughts..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">2. Kind of support received from other students?</label>
+                        <textarea name="peer_kind" rows="3" required placeholder="e.g. notes sharing, studying together..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">3. Time another student helped you with studies?</label>
+                        <textarea name="peer_helped_time" rows="3" required placeholder="Brief description..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">4. Describe your relationships with fellow students?</label>
+                        <textarea name="peer_relationships" rows="2" required placeholder="Description..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4: SECTION C & D (MOTIVATION) -->
+            <div class="step-content" data-step="4">
+                <h3 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b">Section C & D: Motivation</h3>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">5. What motivates you when work gets difficult?</label>
+                        <textarea name="motivation_difficult" rows="2" required placeholder="Your answer..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">6. Situation when you felt encouraged?</label>
+                        <textarea name="motivation_encouraged" rows="2" required placeholder="Your answer..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">7. Other things influencing study motivation (apart from peers)?</label>
+                        <textarea name="motivation_other" rows="2" required placeholder="Your answer..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">8. How does peer support affect your study approach?</label>
+                        <textarea name="peer_effect_approach" rows="2" required placeholder="Your answer..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5: SECTION D (CONT) & E (CLOSING) -->
+            <div class="step-content" data-step="5">
+                <h3 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b">Section D & E: Final Questions</h3>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">9. Situation where peer support affected motivation?</label>
+                        <textarea name="peer_motivation_situation" rows="2" required placeholder="Your answer..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">10. Situations where interactions made studying harder?</label>
+                        <textarea name="peer_harder_situation" rows="2" required placeholder="Your answer..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">11. Anything else to share? (Optional)</label>
+                        <textarea name="closing_remarks" rows="2" placeholder="Any final comments..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex items-center justify-between pt-4 border-t">
+                <button type="button" id="prevBtn" onclick="changeStep(-1)" class="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-slate-50 transition hidden">
+                    Back
+                </button>
+                <div class="ml-auto"></div>
+                <button type="button" id="nextBtn" onclick="changeStep(1)" class="px-6 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 shadow-md shadow-indigo-200 transition">
+                    Next
+                </button>
+                <button type="submit" id="submitBtn" class="px-6 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 shadow-md shadow-emerald-200 transition hidden">
+                    Submit Response
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Script to handle multi-step navigation -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        function updateView() {
+            document.querySelectorAll('.step-content').forEach(el => {
+                el.classList.remove('active');
+                if(parseInt(el.dataset.step) === currentStep) {
+                    el.classList.add('active');
+                }
+            });
+
+            // Update Progress Bar
+            const percent = (currentStep / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
+            document.getElementById('progressPercent').innerText = percent + '%';
+            document.getElementById('stepIndicator').innerText = `Step ${currentStep} of ${totalSteps}`;
+
+            // Toggle Buttons
+            document.getElementById('prevBtn').style.display = currentStep === 1 ? 'none' : 'block';
+            document.getElementById('nextBtn').style.display = currentStep === totalSteps ? 'none' : 'block';
+            document.getElementById('submitBtn').style.display = currentStep === totalSteps ? 'block' : 'none';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function changeStep(direction) {
+            if (direction === 1) {
+                const currentEl = document.querySelector(`.step-content[data-step="${currentStep}"]`);
+                const inputs = currentEl.querySelectorAll('input[required], select[required], textarea[required]');
+                for (let input of inputs) {
+                    if (!input.value.trim()) {
+                        input.reportValidity();
+                        return;
+                    }
+                }
+            }
+            
+            currentStep += direction;
+            if (currentStep < 1) currentStep = 1;
+            if (currentStep > totalSteps) currentStep = totalSteps;
+            updateView();
+        }
+    </script>
+</body>
+</html>
